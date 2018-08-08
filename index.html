@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html ng-app="incaaUiApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html ng-app="incaaUiApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html ng-app="incaaUiApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html prefix="og: http://ogp.me/ns#" lang="es-AR" xml:lang="es-AR"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Cargo el serviceWorker para el banner que sugiere instalar las apps -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+    <link rel="manifest" href="/manifest.json">
+  </head>
+
+  <body>
+  </body>
+</html>
